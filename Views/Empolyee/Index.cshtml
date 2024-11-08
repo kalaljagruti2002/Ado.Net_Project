@@ -1,0 +1,38 @@
+﻿@model ADO.Net_Project.Models.EmpoyeeModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    @TempData["msg"]
+</p>
+
+@using(Html.BeginForm("save", "Empolyee", FormMethod.Post))
+{
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Emp_Name</label>
+                        @Html.HiddenFor(m => m.Emp_id, new { @class = "form-control" })
+                        @Html.TextBoxFor(m => m.Emp_Name, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-3">
+                        <label>Address</label>
+                        @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-3">
+                        <label>Email</label>
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-3">
+                        <label>Salary</label>
+                        @Html.TextBoxFor(m => m.Salary, new { @class = "form-control" })
+                    </div>
+                    <div><br/>
+                        <button type="submit" class="btn btn-primary">SaveRecord</button>
+                    </div>
+
+
+                </div>
+            }
